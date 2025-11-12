@@ -43,7 +43,7 @@ if ingredients_list:
 
         search_on = session.table("smoothies.public.fruit_options").filter(col("FRUIT_NAME") == fruit_chosen).select(col("SEARCH_ON"))
         
-        smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/" + search_on)
+        smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/" + fruit_chosen)
         sf_df = st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
 
     #st.write(ingredients_string)
