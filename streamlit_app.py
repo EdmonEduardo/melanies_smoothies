@@ -45,7 +45,7 @@ if ingredients_list:
         if search_on: # Check if the dataframe is not empty
             search_on_value = search_on.collect()[0]["SEARCH_ON"]
     
-            smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/" + fruit_chosen)
+            smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/" + search_on_value)
             sf_df = st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
 
     #st.write(ingredients_string)
