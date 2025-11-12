@@ -45,7 +45,7 @@ if ingredients_list:
         st.write(search_on)
 
         x = search_on['SEARCH_ON']
-        print(x)
+        st.write(x)
         
         smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/" + fruit_chosen)
         sf_df = st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
