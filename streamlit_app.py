@@ -44,7 +44,7 @@ if ingredients_list:
         search_on = session.table("smoothies.public.fruit_options").filter(col("FRUIT_NAME") == fruit_chosen).select(col("SEARCH_ON"))
         st.write(search_on)
 
-        x = search_on['SEARCH_ON']
+        x = search_on[0]
         st.write(x)
         
         smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/" + fruit_chosen)
